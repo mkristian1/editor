@@ -1,0 +1,23 @@
+.sidebar {
+    width: 100%;
+    max-width: 300px;
+    background-color: var(--blackSecondary);
+    color: var(--white);
+    height: 100vh;
+    padding: 20px 40px;
+    &__title {
+        margin-bottom: 40px;
+    }
+}
+
+.tools {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    &__item {
+        border-radius: 6px;
+        padding: 12px 8px;
+        color: var(--black);
+        background-color: var(--white);
+    }
+}
