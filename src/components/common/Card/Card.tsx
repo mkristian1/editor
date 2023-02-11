@@ -9,10 +9,9 @@ interface ICard {
 }
 
 const Card: FC<ICard> = ({ children, type }) => {
-  const [{ isDragging }, drag] = useDrag<any, void, { isDragging: boolean }>({
+  const [, drag] = useDrag<{ type: string }, void>({
     type: itemTypes.card,
     item: { type },
-    collect: (monitor) => ({ isDragging: monitor.isDragging() }),
   });
 
   return (

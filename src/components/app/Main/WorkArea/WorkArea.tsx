@@ -10,11 +10,11 @@ const WorkArea = () => {
     { id: uuidv4(), type: ToolsType.image },
   ]);
 
-  const handleDrop = (type: any) => {
+  const handleDrop = (type: { type: string }) => {
     setElements((prev) => [...prev, { id: uuidv4(), ...type }]);
   };
 
-  const [, drop] = useDrop(() => ({
+  const [, drop] = useDrop<{ type: string }>(() => ({
     accept: itemTypes.card,
     drop: (item) => handleDrop(item),
   }));
@@ -23,10 +23,10 @@ const WorkArea = () => {
     <div ref={drop} className={styles['work-area']}>
       {elements.map((item) => {
         return (
-          <div key={item.id}>
+          <div className={styles['work-area__item']} key={item.id}>
             {item.type === ToolsType.image && <ImageUpload key={item.id} />}
             {item.type === ToolsType.input && (
-              <textarea key={item.id}></textarea>
+              <textarea rows={6} key={item.id}></textarea>
             )}
           </div>
         );

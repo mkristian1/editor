@@ -1,6 +1,14 @@
 .work-area {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
     padding: 20px;
     width: 100%;
     min-height: 85vh;
-    border: solid 1px gray
+    border: solid 1px gray;
+    &__item {
+        padding: 5px;
+    }
 }
