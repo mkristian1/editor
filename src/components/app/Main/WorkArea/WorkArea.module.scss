@@ -1,4 +1,5 @@
 .work-area {
+    position: relative;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -7,7 +8,15 @@
     padding: 20px;
     width: 100%;
     min-height: 85vh;
-    border: solid 1px gray;
+    border: dashed 1px var(--gray);
+    &__drop-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        color: var(--gray);
+    }
     &__item {
         padding: 5px;
     }
